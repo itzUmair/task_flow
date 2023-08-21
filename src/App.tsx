@@ -1,6 +1,8 @@
+import Login from "./components/authentication/Login"
+
 function App() {
   return (
-  <h1>Hello world</h1>
+  <Login />
   )
 }
 
