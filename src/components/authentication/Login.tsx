@@ -97,7 +97,8 @@ const Login = () => {
           <button onClick={togglePasswordProtection} className="text-clr-100 italic text-xs underline underline-offset-2">{showPassword ? "hide" : "show"} password</button>
         </div>
         {error && <p className="bg-clr-300 text-center text-clr-100">{error}</p>}
-        <button type="submit" onClick={handleSubmit} className="bg-clr-850 hover:bg-clr-900 text-white font-bold py-2 px-4 rounded-lg" disabled={loading}>{loading ? "logging in..." : "Login"}</button>
+        <button type="submit" onClick={handleSubmit} className="bg-clr-850 hover:outline hover:outline-1 hover:bg-clr-900 text-white font-bold py-2 px-4 rounded-lg" disabled={loading}>{loading ? "logging in..." : "Login"}</button>
+        <p className="text-center text-clr-100">Don&apos;t have an account? <a href="/signup" className="underline cursor-pointer">Sign up</a></p>
       </form>
     </div>
   )
