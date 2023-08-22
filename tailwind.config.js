@@ -12,6 +12,9 @@ export default {
         "clr-850": "#3C3C4F",
         "clr-900": "#202025",
       },
+      screens: {
+        "2xl": "2560px",
+      },
     },
   },
   plugins: [],
