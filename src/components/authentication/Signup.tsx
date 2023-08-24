@@ -121,7 +121,7 @@ const Signup = () => {
       return
     }
     try {
-      const response = await api.post("/signup", {
+      await api.post("/signup", {
         ...formData, confirmPassword:undefined
       });
       setSuccess("account created successfully.")
