@@ -1,6 +1,8 @@
 import { useState, useRef } from "react"
 import {AxiosError} from "axios"
-import axios from "../../api/axios"
+import api from "../../api/axios"
+import { useNavigate } from "react-router-dom"
+import {useSignIn} from "react-auth-kit"
 
 type loginFormData = {
   email: string,
@@ -16,10 +18,12 @@ const Login = () => {
     email: "",
     password: "",
   })
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const [loading, setLoading] = useState(false)
   const emailRef = useRef<HTMLInputElement>(null)
   const passwordRef = useRef<HTMLInputElement>(null)
+  const signin = useSignIn()
 
   const [error, setError] = useState<string>("")
 
@@ -67,8 +71,15 @@ const Login = () => {
       return
     }
     try {
-      const response = await axios.post("/signin", formData);
+      const response = await api.post("/signin", formData);
       localStorage.setItem("accessToken", response.data.token)
+      signin({
+        token: response.data.token,
+        expiresIn: 86400,
+        tokenType: "Bearer",
+        authState: {...response.data.userData}
+      })
+      navigate("/")
     } catch(error) {
       const err= error as AxiosError<ErrorResponse>
       setError(err?.response?.data?.message || "")

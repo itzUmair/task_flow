@@ -1,6 +1,6 @@
 import { useState, useRef } from "react"
 import {AxiosError} from "axios"
-import axios from "../../api/axios"
+import api from "../../api/axios"
 
 type SignupFormData = {
   first_name: string,
@@ -121,7 +121,7 @@ const Signup = () => {
       return
     }
     try {
-      const response = await axios.post("/signup", {
+      const response = await api.post("/signup", {
         ...formData, confirmPassword:undefined
       });
       setSuccess("account created successfully.")
