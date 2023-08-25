@@ -14,7 +14,7 @@ const ProfileCard = ({userData, isTeamProfile}:{userData:userDataStructute, isTe
   }
 
   return (
-    <div className={`w-fit ${!isTeamProfile ? "bg-clr-850" : "bg-clr-800"} p-2 rounded-lg relative`} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+    <div className={`w-[14rem] ${!isTeamProfile ? "bg-clr-850" : "bg-clr-800"} p-2 rounded-lg relative`} onMouseEnter={() => {!isTeamProfile && setIsHovering(true)}} onMouseLeave={() => {!isTeamProfile && setIsHovering(false)}}>
       <div className={`flex gap-x-2 ${!isTeamProfile ? "bg-clr-850" : "bg-clr-800"} w-fit p-2 rounded-lg cursor-pointer`} onClick={() => navigate("/profile")} >
         <div style={{backgroundColor: userData.badgeColor || "#88FD51"}} className="text-clr-900 rounded-full w-11 h-11 flex items-center justify-center font-bold capitalize text-xl">{userData.first_name[0]}</div>
           <div>
