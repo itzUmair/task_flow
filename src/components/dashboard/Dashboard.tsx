@@ -35,7 +35,7 @@ const Dashboard = () => {
       <Titlebar />
       <div className="mx-auto 2xl:w-[1440px] px-4 py-4 md:px-16 flex justify-between">
         <ProfileCard userData={userData} isTeamProfile={false}/>
-        <div className="flex gap-x-4 items-center justify-center">
+        <div className="flex gap-y-2 md:gap-x-4 flex-col-reverse md:flex-row items-center justify-center">
           <TeamLogs />
           <TeamSelectorCard />
         </div>

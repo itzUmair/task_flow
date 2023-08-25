@@ -20,7 +20,7 @@ const TeamSelectorCard = () => {
 
   return (
     <div className="relative" id="teamBTN">
-      <button className="w-fit h-[3rem] bg-clr-850 p-2 rounded-lg text-clr-100 flex items-center justify-center gap-x-2 cursor-pointer" onClick={() => setShowTeamMembers(prevState => !prevState)}><div style={{ backgroundColor: team?.badgeColor }} className="w-2 h-2 rounded-full"></div>{team?.name}<img src={Caret} className="w-8 h-8" /></button>
+      <button className="w-fit h-14 md:h-16 bg-clr-850 p-2 rounded-lg text-clr-100 flex items-center justify-center gap-x-2 cursor-pointer" onClick={() => setShowTeamMembers(prevState => !prevState)}><div style={{ backgroundColor: team?.badgeColor }} className="w-2 h-2 rounded-full"></div>{team?.name}<img src={Caret} className="w-6 h-6 md:w-8 md:h-8" /></button>
       {showTeamMembers && <TeamMembersDisplay teamID={team?._id} />}
     </div>
   )
