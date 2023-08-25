@@ -47,6 +47,7 @@ export type teamMemberStructure = {
 }
 
 export type teamLogsStructute = {
+  _id: string
   message: string,
   date: Date
 }
