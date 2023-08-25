@@ -72,10 +72,9 @@ const Login = () => {
     }
     try {
       const response = await api.post("/signin", formData);
-      localStorage.setItem("accessToken", response.data.token)
       signin({
         token: response.data.token,
-        expiresIn: 86400,
+        expiresIn: 3600,
         tokenType: "Bearer",
         authState: {...response.data.userData}
       })
