@@ -4,6 +4,7 @@ import Cookies from "js-cookie"
 import * as Types from "../../types"
 import ProfileCard from "./ProfileCard"
 import TeamSelectorCard from "./TeamSelectorCard"
+import TeamLogs from "./TeamLogs"
 
 const Dashboard = () => {
   const [userData, setUserData] = useState<Types.userDataStructute>({
@@ -34,7 +35,10 @@ const Dashboard = () => {
       <Titlebar />
       <div className="mx-auto 2xl:w-[1440px] px-4 py-4 md:px-16 flex justify-between">
         <ProfileCard userData={userData} isTeamProfile={false}/>
-        <TeamSelectorCard />
+        <div className="flex gap-x-4 items-center justify-center">
+          <TeamLogs />
+          <TeamSelectorCard />
+        </div>
       </div>
     </main>
   )

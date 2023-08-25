@@ -23,9 +23,9 @@ const TeamMembersDisplay = ({teamID} : {teamID:string | undefined}) => {
   },[teamID])
 
   return (
-    <div className="absolute right-0 top-16 max-h-[40vh] overflow-y-auto bg-clr-800 p-2">
+    <div className="absolute right-0 top-16 max-h-[40vh] overflow-y-auto bg-clr-850 p-2 rounded-md">
       {isLoading ? 
-      <p>Loading...</p> : 
+      <p className="text-clr-100 text-center capitalize">Loading...</p> : 
       <div className="flex flex-col gap-y-4">
         {teamMembers.map((member, index) => (
           <ProfileCard key={index} userData={member} isTeamProfile={true} />

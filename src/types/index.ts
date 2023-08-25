@@ -45,3 +45,8 @@ export type teamMemberStructure = {
   badgeColor: string,
   email: string,
 }
+
+export type teamLogsStructute = {
+  message: string,
+  date: Date
+}
