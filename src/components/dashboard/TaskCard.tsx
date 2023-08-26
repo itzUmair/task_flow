@@ -14,6 +14,7 @@ const TaskCard = ({task}:{task: Type.tasksStructure}) => {
 
   const taskDate = new Date(task.deadline)
   const currentDate = new Date()
+  const taskCompletedDate = new Date(task.createdOn)
 
   const setDeadlineColor = () => {
     if((taskDate.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24) <= 2) {
@@ -33,7 +34,9 @@ const TaskCard = ({task}:{task: Type.tasksStructure}) => {
       <p className="text-sm my-2">
         {task.description}
       </p>
-      <p className={`${setDeadlineColor()} rounded-sm px-2 text-clr-900 font-bold`}>Deadline: {taskDate.toLocaleDateString()}</p>
+      <p className={`${task.state === "complete" ? "bg-clr-800" : setDeadlineColor()} rounded-sm px-2 text-clr-900 font-bold`}>Deadline: {taskDate.toLocaleDateString()}</p>
+      {task.state === "complete" && <p className="bg-clr-800 rounded-sm px-2 text-clr-900 font-bold mt-1">Completed On: {taskCompletedDate.toLocaleDateString()}</p>}
+      {task.state === "complete" && <p className="bg-clr-800 rounded-sm px-2 text-clr-900 font-bold mt-1">Completed By: {task.completedBy}</p>}
     </div>
   )
 }
