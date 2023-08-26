@@ -46,9 +46,9 @@ const TaskContainer = () => {
     <div className="py-4">
       <div className="flex gap-x-2 text-clr-100">
         <p className="font-bold">Priority:</p>
-        <p className="flex items-center gap-x-2"><div className="w-2 h-2 bg-clr-300 rounded-full"></div>High</p>
-        <p className="flex items-center gap-x-2"><div className="w-2 h-2 bg-clr-500 rounded-full"></div>Medium</p>
-        <p className="flex items-center gap-x-2"><div className="w-2 h-2 bg-clr-400 rounded-full"></div>Low</p>
+        <p className="flex items-center gap-x-2"><span className="block w-2 h-2 bg-clr-300 rounded-full"></span>High</p>
+        <p className="flex items-center gap-x-2"><span className="block w-2 h-2 bg-clr-500 rounded-full"></span>Medium</p>
+        <p className="flex items-center gap-x-2"><span className="block w-2 h-2 bg-clr-400 rounded-full"></span>Low</p>
       </div>
       <div className="flex mt-4">
         {Todo && <TodoContainer task={Todo} />}

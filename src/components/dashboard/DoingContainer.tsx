@@ -1,7 +1,10 @@
 import * as Type from "../../types"
 import TaskCard from "./TaskCard"
+import { useState } from "react"
 
-const DoingContainer = ({task}: {task:Type.tasksStructure[]}) => {
+const DoingContainer = ({ task }: { task: Type.tasksStructure[] }) => {
+  const [tasks, setTasks] = useState(task);
+
   return (
     <div className="border-2 border-dashed border-clr-800 flex flex-col w-2/6 h-fit p-2 rounded-md">
       <div className="flex justify-between items-center w-full">
@@ -10,12 +13,14 @@ const DoingContainer = ({task}: {task:Type.tasksStructure[]}) => {
         </h2>
       </div>
       <div>
-        {task && task.map((t, index) => (
-          <TaskCard task={t} key={index} />
+        {tasks && tasks.map((task, index) => (
+          <div key={index}>
+            <TaskCard task={task} />
+          </div>
         ))}
       </div>
     </div>
   )
 }
 
-export default DoingContainer
+export default DoingContainer;

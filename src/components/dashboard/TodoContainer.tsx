@@ -1,8 +1,11 @@
 import Add from "../../assets/add.svg"
 import * as Type from "../../types"
 import TaskCard from "./TaskCard"
+import {useState} from "react"
 
 const TodoContainer = ({task}: {task:Type.tasksStructure[]}) => {
+  const [Tasks, setTasks] = useState(task)
+
   return (
     <div className="border-2 border-dashed border-clr-800 flex flex-col w-2/6 mr-2 h-fit p-2 rounded-md">
       <div className="flex justify-between items-center w-full">
@@ -14,8 +17,10 @@ const TodoContainer = ({task}: {task:Type.tasksStructure[]}) => {
         </button>
       </div>
       <div>
-        {task.map((t, index) => (
-          <TaskCard task={t} key={index} />
+        {Tasks.map((task, index) => (
+          <div key={index}>
+            <TaskCard task={task} />
+          </div>
         ))}
       </div>
     </div>

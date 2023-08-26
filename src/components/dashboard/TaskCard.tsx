@@ -1,5 +1,6 @@
 import * as Type from "../../types"
 import Drag from "../../assets/drag.svg"
+import React from "react"
 
 const TaskCard = ({task}:{task: Type.tasksStructure}) => {
   const setPriorityColor = (priority:string) => {
@@ -27,7 +28,7 @@ const TaskCard = ({task}:{task: Type.tasksStructure}) => {
   }
 
   return (
-    <div className="flex flex-col bg-clr-850 text-clr-100 p-2 rounded-md my-3" draggable>
+    <div className="flex flex-col bg-clr-850 text-clr-100 p-2 rounded-md my-3">
       <div className="flex justify-between items-center">
         <h4 className="font-bold md:text-xl flex items-center gap-x-2">{task.title} <span className={`block w-2 h-2 rounded-full ${setPriorityColor(task.priority)}`}></span></h4> <button><img src={Drag} alt="drag" /></button>
       </div>
