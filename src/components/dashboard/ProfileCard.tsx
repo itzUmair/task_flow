@@ -22,7 +22,7 @@ const ProfileCard = ({userData, isTeamProfile}:{userData:userDataStructute, isTe
             <p className={`text-clr-100/50 max-w-[14ch] ${isHovering && "max-w-full"} truncate text-xs md:text-sm`}>{userData.email}</p>
           </div>
       </div>
-      {!isTeamProfile && isHovering && <div className="p-2 bg-clr-850 w-full absolute left-0 rounded-md top-[4rem]"><button className="p-2 bg-clr-900 text-clr-100 w-full rounded-md" onClick={logout}>Logout</button></div>}
+      {!isTeamProfile && isHovering && <div className="p-2 bg-clr-850 w-full absolute left-0 rounded-md top-[3.45rem]"><button className="p-2 bg-clr-900 text-clr-100 w-full rounded-md" onClick={logout}>Logout</button></div>}
     </div>
   )
 }
